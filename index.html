@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ශ්‍රී ලංකා නැගෙනහිර උපදෙස්</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ශ්‍රී ලංකා ගනුනු ග��ව පරීක්ෂණය 10-13</h1>
+    </header>
+    <main>
+        <h2>උපදෙස්</h2>
+        <p>මෙම යෙදුම ශ්‍රී ලංකාවේ ශ්‍රේණි 10-13උපදෙස් සඳහා වේ.</p>
+        <ul id="syllabus-list"></ul>
+    </main>
+    <footer>
+        <p>අවසාන යාවත්කාලීන: 2026-03-31</p>
+    </footer>
+    <script>
+        const syllabus = [
+            "වත්මන් ව්‍යවස්ථාව",
+            "මෙහෙයුම් සමීකරණය",
+            "සාධාරණ සාමාන්‍යධාන්ය",
+            "සමාන්‍යයා නියමයක්"
+        ];
+
+        const syllabusList = document.getElementById('syllabus-list');
+        syllabus.forEach(item => {
+            let li = document.createElement('li');
+            li.textContent = item;
+            syllabusList.appendChild(li);
+        });
+    </script>
+</body>
+</html>
