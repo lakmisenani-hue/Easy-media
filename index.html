@@ -1,60 +1,34 @@
 <!DOCTYPE html>
-<html lang="si">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ශ්‍රී ලංකා නැගෙනහිර උපදෙස්</title>
+    <title>Aralaganwila Buy and Sell</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
-
-        main {
-            padding: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background: #007bff;
-            color: white;
-        }
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { margin-bottom: 20px; }
+        input, button { padding: 10px; margin-right: 10px; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>ශ්‍රී ලංකා ගනුනු ග��ව පරීක්ෂණය 10-13</h1>
-    </header>
-    <main>
-        <h2>උපදෙස්</h2>
-        <p>මෙම යෙදුම ශ්‍රී ලංකාවේ ශ්‍රේණි 10-13උපදෙස් සඳහා වේ.</p>
-        <ul id="syllabus-list"></ul>
-    </main>
-    <footer>
-        <p>අවසාන යාවත්කාලීන: 2026-03-31</p>
-    </footer>
+    <h1>Welcome to Aralaganwila Buy and Sell</h1>
+    <form id="adForm">
+        <input type="text" id="itemName" placeholder="Item Name" required />
+        <input type="text" id="itemPrice" placeholder="Item Price" required />
+        <button type="submit">Post Ad</button>
+    </form>
+    <h2>Posted Ads</h2>
+    <ul id="adList"></ul>
     <script>
-        const syllabus = [
-            "වත්මන් ව්‍යවස්ථාව",
-            "මෙහෙයුම් සමීකරණය",
-            "සාධාරණ සාමාන්‍යධාන්ය",
-            "සමාන්‍යයා නියමයක්"
-        ];
-
-        const syllabusList = document.getElementById('syllabus-list');
-        syllabus.forEach(item => {
-            let li = document.createElement('li');
-            li.textContent = item;
-            syllabusList.appendChild(li);
+        document.getElementById('adForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const itemName = document.getElementById('itemName').value;
+            const itemPrice = document.getElementById('itemPrice').value;
+            const adList = document.getElementById('adList');
+            const listItem = document.createElement('li');
+            listItem.textContent = `Item: ${itemName}, Price: ${itemPrice}`;
+            adList.appendChild(listItem);
+            document.getElementById('adForm').reset();
         });
     </script>
 </body>
